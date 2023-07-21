@@ -1,0 +1,22 @@
+version: "3.9"
+services:
+  redis:
+    image: redis/redis-stack
+    ports:
+      - 6379:6379
+      - 8001:8001
+    volumes:
+      - redis:/data
+
+  postgres:
+    image: postgres:alpine
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+
+volumes:
+  redis:
+  postgres:

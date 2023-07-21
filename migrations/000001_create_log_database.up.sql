@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS logs (
+    id VARCHAR(20) PRIMARY KEY,
+    message TEXT
+);
